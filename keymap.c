@@ -242,7 +242,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 oled_rotation_t oled_init_user(oled_rotation_t rotation) { return OLED_ROTATION_180; }
 
 bool oled_task_user(void) {
-    if (is_keyboard_master()) {
+    if (!is_keyboard_master()) {
         // QMK Logo and version information
         // clang-format off
         static const char qmk_logo[] = {
@@ -320,7 +320,7 @@ static deferred_token         my_anim;
 
 #include "guraw.qgf.h"
 void keyboard_post_init_kb() {
-    if (is_keyboard_master()) {
+    if (!is_keyboard_master()) {
         return;
     }
     display = qp_sh1106_make_i2c_device(128, 64, 0x3c); // Create the display
