@@ -34,4 +34,5 @@
 #    	define RGBLIGHT_LIMIT_VAL 150
 #    endif
 #endif
-
+#define COMBO_MUST_PRESS_IN_ORDER_PER_COMBO
+#define COMBO_TERM_PER_COMBO
